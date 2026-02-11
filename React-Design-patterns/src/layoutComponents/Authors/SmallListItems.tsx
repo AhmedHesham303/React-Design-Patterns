@@ -1,12 +1,11 @@
 import type { author } from "../types/author";
 
 export default function SmallAuthorListItem({ author }: { author: author }) {
+  const { name, age } = author;
   return (
     <div>
-      <h3>{author.name}</h3>
-      <p>{author.books.length} books</p>
-      <p>Age: {author.age}</p>
-      <p>Country: {author.country}</p>
+      <h3>{name}</h3>
+      <p>Age: {age}</p>
     </div>
   );
 }
