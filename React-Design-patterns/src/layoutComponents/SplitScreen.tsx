@@ -5,9 +5,9 @@ const Container = styled.div`
   display: flex;
 `;
 
-const Panel = styled.div`
-  flex: ${(p) => p.flex};
-`;
+// const Panel = styled.div`
+//   flex: ${(p) => p.flex};
+// `;
 type SplitScreenProps = {
   children: React.ReactNode[];
   leftWidth?: number;
@@ -20,11 +20,10 @@ function SplitScreen({
 }: SplitScreenProps) {
   const [left, right] = children;
   return (
-    <Container>
-      <Panel flex={leftWidth}>{left}</Panel>
-
-      <Panel flex={rightWidth}>{right}</Panel>
-    </Container>
+    <div style={{ display: "flex" }}>
+      <div style={{ flex: leftWidth }}>{left}</div>
+      <div style={{ flex: rightWidth }}>{right}</div>
+    </div>
   );
 }
 
